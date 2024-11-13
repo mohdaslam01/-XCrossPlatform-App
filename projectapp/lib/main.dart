@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'about_us.dart';
+import 'bookings.dart';
+import 'elite_ship.dart';
+import 'home.dart';
+import 'locations.dart';
+import 'myfav.dart';
+import 'new_features.dart';
+import 'second_page.dart';
+import 'service.dart';
+import 'settings.dart';
+import 'talk_to_us.dart';
 
 void main() {
   runApp(const MyApp());
@@ -103,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          /*mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
@@ -111,6 +122,99 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],  end changes */ //Widget[]
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AboutUs()),
+                );
+              },
+              child: const Text('Go to About Us'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Bookings()),
+                );
+              },
+              child: const Text('Go to Bookings'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const EliteShip()),
+                );
+              },
+              child: const Text('Go to Elite Ship'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Locations()),
+                );
+              },
+              child: const Text('Go to Locations'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyFav()),
+                );
+              },
+              child: const Text('Go to My Favorites'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NewFeatures()),
+                );
+              },
+              child: const Text('Go to New Features'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondPage()),
+                );
+              },
+              child: const Text('Go to Second Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Service()),
+                );
+              },
+              child: const Text('Go to Service'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Settings()),
+                );
+              },
+              child: const Text('Go to Settings'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const TalkToUs()),
+                );
+              },
+              child: const Text('Go to Talk To Us'),
             ),
           ],
         ),
