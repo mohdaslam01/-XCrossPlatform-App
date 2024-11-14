@@ -11,12 +11,14 @@ class SecondPage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: const Center(
-        child: Text(
-          'This is the second page!',
-          style:  TextStyle(
-            fontSize: 24,
-          ),
-        ),
+        child: Column(
+          children: [Text(
+            'This is the second page!\n Powered by Google',
+            style:  TextStyle(
+              fontSize: 24,
+            ),
+          ),]
+        )
       ),
     );
   }
