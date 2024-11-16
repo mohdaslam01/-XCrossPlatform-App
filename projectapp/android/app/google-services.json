@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "422032729764",
+    "project_id": "qteam-5d444",
+    "storage_bucket": "qteam-5d444.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422032729764:android:9e00d4440bdb94ce872831",
+        "android_client_info": {
+          "package_name": "com.qteam5d444.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwUv6jI5wr7Si4TCH8r3FYVI_jYCR5CLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422032729764:android:ef724f4c5b3237c8872831",
+        "android_client_info": {
+          "package_name": "com.qteam5d5444.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwUv6jI5wr7Si4TCH8r3FYVI_jYCR5CLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

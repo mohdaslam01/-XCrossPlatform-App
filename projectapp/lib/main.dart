@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'about_us.dart';
 import 'bookings.dart';
 import 'elite_ship.dart';
-import 'home.dart';
 import 'locations.dart';
 import 'myfav.dart';
 import 'new_features.dart';
@@ -10,9 +9,17 @@ import 'second_page.dart';
 import 'service.dart';
 import 'settings.dart';
 import 'talk_to_us.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  // runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {
