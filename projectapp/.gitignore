@@ -41,3 +41,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore all JSON files
+*.json
+
+# Ignore specific config file (example)
+config/
+
+# Ignore Firebase configuration file
+firebase_config.js
+
