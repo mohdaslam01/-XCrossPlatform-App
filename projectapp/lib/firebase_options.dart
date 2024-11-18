@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '422032729764',
     projectId: 'qteam-5d444',
     storageBucket: 'qteam-5d444.firebasestorage.app',
+    iosClientId: '422032729764-roi552dlnro1o8a3ha8q3n9a1oo8f6ud.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectapp',
   );
 
@@ -73,6 +74,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '422032729764',
     projectId: 'qteam-5d444',
     storageBucket: 'qteam-5d444.firebasestorage.app',
+    iosClientId: '422032729764-roi552dlnro1o8a3ha8q3n9a1oo8f6ud.apps.googleusercontent.com',
     iosBundleId: 'com.example.projectapp',
   );
 
