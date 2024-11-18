@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'about_us.dart';
 import 'bookings.dart';
@@ -24,6 +25,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
 
   // This widget is the root of your application.
   @override
@@ -76,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // ignore: unused_field
   int _counter = 0;
   /* Actual Code - Mohammed Aslam - Google Sign In */
-  
+ 
 
   void _incrementCounter() {
     setState(() {
@@ -234,6 +236,11 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      
     );
+
   }
+  // Widget _googleSignInButton(){
+  //   return const Center();
+  // }
 }
