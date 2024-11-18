@@ -10,7 +10,7 @@ class Settings extends StatelessWidget {
         title: const Text('Settings'),
       ),
       body: const Center(
-        child: Text('Welcome to the Settings Page'),
+        child: Text('Welcome to the Settings Page\nDefault System Settings'),
       ),
     );
   }

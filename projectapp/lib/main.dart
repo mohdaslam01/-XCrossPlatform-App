@@ -73,6 +73,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // ignore: unused_field
   int _counter = 0;
 
   void _incrementCounter() {
