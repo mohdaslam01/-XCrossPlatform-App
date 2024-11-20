@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:422032729764:android:3b844e57cbfe1d5b872831",
+        "android_client_info": {
+          "package_name": "com.qteam.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422032729764-u16un0njmsq75bu2nr0ktjemvdo933q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwUv6jI5wr7Si4TCH8r3FYVI_jYCR5CLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422032729764-u16un0njmsq75bu2nr0ktjemvdo933q3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "422032729764-roi552dlnro1o8a3ha8q3n9a1oo8f6ud.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.projectapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:422032729764:android:9e00d4440bdb94ce872831",
         "android_client_info": {
           "package_name": "com.qteam5d444.app"
