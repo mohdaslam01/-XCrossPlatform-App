@@ -34,7 +34,7 @@
               "client_id": "422032729764-roi552dlnro1o8a3ha8q3n9a1oo8f6ud.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.projectapp"
+                "bundle_id": "com.qteam5d5444.app"
               }
             }
           ]
@@ -70,7 +70,7 @@
               "client_id": "422032729764-roi552dlnro1o8a3ha8q3n9a1oo8f6ud.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.projectapp"
+                "bundle_id": "com.qteam5d5444.app"
               }
             }
           ]
@@ -81,7 +81,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:422032729764:android:ef724f4c5b3237c8872831",
         "android_client_info": {
-          "package_name": "com.qteam5d5444.com"
+          "package_name": "com.qteam5d5444.app"
         }
       },
       "oauth_client": [
