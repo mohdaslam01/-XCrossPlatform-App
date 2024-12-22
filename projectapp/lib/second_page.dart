@@ -51,7 +51,16 @@ class _SecondPageState extends State<SecondPage> {
     );
   }
   Widget _userInfo(){
-    return const SizedBox();
+    // return const SizedBox();
+    return Center(
+      child: Text(
+        'Welcome, ${_user?.displayName ?? 'User'}!',
+        style: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
   // ignore: unused_element
   void _handleGoogleSignIn(){
