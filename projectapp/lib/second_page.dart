@@ -52,10 +52,10 @@ class _SecondPageState extends State<SecondPage> {
   }
   Widget _userInfo(){
     // return const SizedBox();
-    return Center(
+    return const Center(
       child: Text(
-        'Welcome, ${_user?.displayName ?? 'User'}!',
-        style: const TextStyle(
+        'Welcome to Quick Team!',
+        style: TextStyle(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
@@ -63,11 +63,16 @@ class _SecondPageState extends State<SecondPage> {
     );
   }
   // ignore: unused_element
-  void _handleGoogleSignIn(){
+  void _handleGoogleSignIn() async{
     try{
       // ignore: unused_local_variable
       GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
       _auth.signInWithProvider(googleAuthProvider);
+      await _auth.currentUser?.reload();
+      setState(() {
+      _user = _auth.currentUser; // Set the reloaded user data
+    });
+
     }catch(error){
       // ignore: avoid_print
       print(error);
