@@ -79,6 +79,7 @@ class _SecondPageState extends State<SecondPage> {
       }
   }
 }
+//Database for the user-app interaction
 // import 'package:flutter/material.dart';
 
 // class SecondPage extends StatefulWidget {
