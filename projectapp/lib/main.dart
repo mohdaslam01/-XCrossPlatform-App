@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(builder: (context) => const Home()),
                 );
               },
-              child: const Text('Home'),
+              child: const Text('Go to Home'),
             ),
             ElevatedButton(
               onPressed: () {
