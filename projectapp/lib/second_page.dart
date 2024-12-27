@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_button/sign_in_button.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'home.dart'; // Import the new page
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
@@ -13,9 +13,14 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore db = FirebaseFirestore.instance; // Firestore instance
+  final FirebaseFirestore db = FirebaseFirestore.instance;
 
   User? _user;
+  List<Map<String, dynamic>> items = [];
+
+  final TextEditingController itemController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController communicationController = TextEditingController();
 
   @override
   void initState() {
@@ -24,24 +29,45 @@ class _SecondPageState extends State<SecondPage> {
       setState(() {
         _user = event;
         if (_user != null) {
-          _addUserToFirestore(); // Call function to add Firestore data
+          _fetchItems();
         }
       });
     });
   }
 
-  Future<void> _addUserToFirestore() async {
-    final user = <String, dynamic>{
-      "first": "Ada",
-      "last": "Lovelace",
-      "born": 1815,
-    };
-
+  Future<void> _fetchItems() async {
+    if (_user == null) return;
     try {
-      final docRef = await db.collection("users").add(user);
-      print('DocumentSnapshot added with ID: ${docRef.id}');
+      final doc = await db.collection("users").doc(_user!.uid).get();
+      if (doc.exists && doc.data() != null) {
+        setState(() {
+          items = List<Map<String, dynamic>>.from(doc.data()?['items'] ?? []);
+        });
+      }
     } catch (e) {
-      print('Error adding document: $e');
+      // ignore: avoid_print
+      print('Error fetching items: $e');
+    }
+  }
+
+  Future<void> _addItem(String item, String phone, String communicationType) async {
+    if (_user == null) return;
+    try {
+      final newItem = {
+        "item": item,
+        "phone": phone,
+        "communicationType": communicationType,
+      };
+      setState(() {
+        items.add(newItem);
+      });
+      await db.collection("users").doc(_user!.uid).set(
+        {'items': items},
+        SetOptions(merge: true),
+      );
+    } catch (e) {
+      // ignore: avoid_print
+      print('Error adding item: $e');
     }
   }
 
@@ -49,49 +75,67 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Page'),
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        title: const Text('CRUD Operations'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.visibility),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Home()),
+              );
+            },
+          ),
+        ],
       ),
-      body: _user != null ? _userInfo() : _googleSignInButton(),
-    );
-  }
-
-  Widget _googleSignInButton() {
-    return Center(
-      child: SizedBox(
-        height: 40,
-        child: SignInButton(
-          Buttons.google,
-          text: "Google Sign up",
-          onPressed: _handleGoogleSignIn,
-        ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: itemController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter an item',
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: phoneController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter phone number',
+              ),
+              keyboardType: TextInputType.phone,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: communicationController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter communication type',
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (itemController.text.isNotEmpty &&
+                  phoneController.text.isNotEmpty &&
+                  communicationController.text.isNotEmpty) {
+                _addItem(itemController.text, phoneController.text, communicationController.text);
+                itemController.clear();
+                phoneController.clear();
+                communicationController.clear();
+              }
+            },
+            child: const Text('Add Item'),
+          ),
+        ],
       ),
     );
-  }
-
-  Widget _userInfo() {
-    return const Center(
-      child: Text(
-        'Welcome to Quick Team!',
-        style: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-
-  void _handleGoogleSignIn() async {
-    try {
-      GoogleAuthProvider googleAuthProvider = GoogleAuthProvider();
-      await _auth.signInWithProvider(googleAuthProvider);
-      await _auth.currentUser?.reload();
-      setState(() {
-        _user = _auth.currentUser;
-      });
-    } catch (error) {
-      // ignore: avoid_print
-      print(error);
-    }
   }
 }

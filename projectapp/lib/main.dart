@@ -1,6 +1,7 @@
 // ignore: unused_import
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:projectapp/home.dart';
 import 'about_us.dart';
 import 'bookings.dart';
 import 'elite_ship.dart';
@@ -188,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const NewFeatures()),
+                  MaterialPageRoute(builder: (context) => const Home()),
                 );
               },
               child: const Text('Go to New Features'),
