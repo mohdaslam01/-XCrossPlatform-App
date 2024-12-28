@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package = "com.qteam5d5444.app">
     <application
-        android:label="projectapp"
+        android:label="Quick Team"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
