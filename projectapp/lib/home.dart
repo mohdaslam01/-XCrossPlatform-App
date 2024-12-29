@@ -36,6 +36,7 @@ class _HomeState extends State<Home> {
         filteredItems = fetchedItems;
       });
     } catch (e) {
+      // ignore: avoid_print
       print('Error fetching items: $e');
     }
   }
