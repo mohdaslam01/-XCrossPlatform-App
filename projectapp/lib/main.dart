@@ -3,13 +3,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:projectapp/home.dart';
 import 'about_us.dart';
+// ignore: unused_import
 import 'bookings.dart';
 import 'elite_ship.dart';
+// ignore: unused_import
 import 'locations.dart';
+// ignore: unused_import
 import 'myfav.dart';
 import 'new_features.dart';
 import 'second_page.dart';
 import 'service.dart';
+// ignore: unused_import
 import 'settings.dart';
 import 'talk_to_us.dart';
 import 'package:firebase_core/firebase_core.dart';
