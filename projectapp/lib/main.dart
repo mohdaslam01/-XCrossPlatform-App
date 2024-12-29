@@ -149,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Go to About Us'),
             ),
-            ElevatedButton(
+            /*ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -157,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Go to Bookings'),
-            ),
+            ),*/
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -167,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Go to Elite Ship'),
             ),
-            ElevatedButton(
+            /*ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -184,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Go to My Favorites'),
-            ),
+            ),*/
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Go to Service'),
             ),
-            ElevatedButton(
+            /*ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -229,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Go to Settings'),
-            ),
+            ),*/
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
