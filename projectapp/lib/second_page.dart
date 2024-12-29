@@ -122,7 +122,7 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('CRUD Operations'),
+        title: const Text('I am expert in'),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
